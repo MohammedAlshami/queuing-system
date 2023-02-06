@@ -63,7 +63,7 @@ class QUEUE implements IQueuable {
     // removes item from queue, and returns the item removed
     public String dequeue() {
         if (!queue.isEmpty()) {
-            String returnValue = queue.removeFirst();
+            String returnValue = queue.removeLast();
             return returnValue;
         }
         return null;
