@@ -1,0 +1,55 @@
+body {
+    background-color: #1f1f1f;
+}
+
+.item1 {
+    grid-area: menu1;
+}
+
+.item2 {
+    grid-area: main2;
+}
+
+.item3 {
+    grid-area: main3;
+}
+
+.item4 {
+    grid-area: main4;
+}
+
+.grid-container {
+    margin: 30px 60px 30px 60px;
+    display: grid;
+    grid-template-areas: 'menu1 main2 main3 main4';
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: #1eff00;
+    border-radius: 50%;
+    float: right;
+}
+
+.btn,
+button {
+    background-color: #1cbdd6;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 10px;
+}

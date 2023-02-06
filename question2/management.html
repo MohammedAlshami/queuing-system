@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+    <link href="style/style.css" rel="stylesheet">
+    <script type="text/javascript">
+        function myFunction(counter, act) {
+            if (act == 1) {
+                on_off = document.getElementById(counter).innerHTML
+                if (on_off == "Go offline") {
+                    document.getElementById(counter).innerText = "Go Online";
+                } else {
+                    document.getElementById(counter).innerText = "Go offline";
+                }
+            }
+
+            $.ajax({
+                type: "POST",
+                url: 'php/logic.php',
+                data: {
+                    id: counter,
+                    action: act
+                }
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1 style=" text-align:center; color:White;">Queuing System</h1>
+    <div style="text-align:center;">
+        <a href="https://shamiii.000webhostapp.com" class="btn" target="_blank" style="text-decoration:none;">Go to Client Page</a>
+    </div>
+
+    <div class="grid-container">
+
+        <div class="item1">
+            <h6>Counter 1"</h6>
+            <button id="1" onclick="myFunction('1', '1')">Go offline</button><br>
+            <button onclick="myFunction('1', '2')">Complete Current</button><br>
+            <button onclick="myFunction('1', '3')">Call Next</button>
+        </div>
+        <div class="item2">
+            <h6>Counter 2</h6>
+            <button id="2" onclick="myFunction('2', '1')">Go offline</button><br>
+            <button onclick="myFunction('2', '2')">Complete Current</button><br>
+            <button onclick="myFunction('2', '3')">Call Next</button>
+        </div>
+        <div class="item3">
+            <h6>Counter 3</h6>
+            <button id="3" onclick="myFunction('3', '1')">Go offline</button><br>
+            <button onclick="myFunction('3', '2')">Complete Current</button><br>
+            <button onclick="myFunction('3', '3')">Call Next</button>
+
+        </div>
+        <div class="item4">
+            <h6>Counter 4</h6>
+            <button id="4" onclick="myFunction('4', '1')">Go offline</button><br>
+            <button onclick="myFunction('4', '2')">Complete Current</button><br>
+            <button onclick="myFunction('4', '3')">Call Next</button>
+        </div>
+    </div>
+</body>
+
+</html>
